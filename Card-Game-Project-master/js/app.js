@@ -21,6 +21,8 @@ let counter2=0;
 let time=0;
 let timerId=0;
 let timerOut=true;
+const reset = document.querySelector("#reset");
+
 
 /*********************************************************/
 
@@ -103,13 +105,21 @@ const timerCount = ()=>{
 };
 
 /***************************************** */
-const stopTimer = () => {
+const stopClock = () => {
     timerOut = false;
     clearInterval(timerId);
     time = 0;
     timerCount();
 };
 /**************************************************** */
+const rest = () => {
+    stopClock();
+    timerOut = true;
+    time = 0;
+    timerCount();
+};
+
+/*********************************************/
 const addOfMovi = () => {
     counter2++;
     const moves = document.querySelector("#moves");
